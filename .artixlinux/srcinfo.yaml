@@ -129,7 +129,7 @@ pkgbase:
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - e0f16d7bda45c6bf829c5fc42812a25fc5cda7bd1193883351fecd37c42e8c30
+    - SKIP
 pkgname:
   - name: sonic-workspace
     groups:

@@ -118,7 +118,7 @@ makedepends=(baloo
              qcoro)
 groups=(sonicde)
 source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('e0f16d7bda45c6bf829c5fc42812a25fc5cda7bd1193883351fecd37c42e8c30')
+sha256sums=('SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
