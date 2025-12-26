@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -54,6 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 6.5.4-3
+    packages:
+      - sonic-workspace-6.5.4-3-x86_64.pkg.tar.zst
+      - sonic-x11-session-6.5.4-3-x86_64.pkg.tar.zst
     debug: []
