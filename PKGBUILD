@@ -167,3 +167,4 @@ package_sonic-x11-session() {
 
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
 }
+
