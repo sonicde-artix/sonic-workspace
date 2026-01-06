@@ -54,8 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 6.5.4-3
+    version: 6.5.4-4
     packages:
-      - sonic-workspace-6.5.4-3-x86_64.pkg.tar.zst
-      - sonic-x11-session-6.5.4-3-x86_64.pkg.tar.zst
+      - sonic-workspace-6.5.4-4-x86_64.pkg.tar.zst
+      - sonic-x11-session-6.5.4-4-x86_64.pkg.tar.zst
     debug: []

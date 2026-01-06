@@ -4,7 +4,7 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.5.4
 _pkgver="${pkgver}"
-pkgrel=3
+pkgrel=4
 pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -144,9 +144,8 @@ package_sonic-workspace() {
             'plasma5-integration: use Plasma settings in Qt5 applications'
             'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
   depends+=(plasma-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
-  conflicts=(plasma-workspace plasma-wayland-session plasma-workspace-sonic)
-  provides=(plasma-workspace plasma-workspace-sonic)
-  replaces=(plasma-workspace-sonic)
+  conflicts=(plasma-workspace plasma-wayland-session)
+  provides=(plasma-workspace)
   groups=(sonicde)
 
   DESTDIR="$pkgdir" cmake --install build
@@ -159,10 +158,9 @@ package_sonic-workspace() {
 
 package_sonic-x11-session() {
   pkgdesc='Plasma X11 session, sonic edition, for XLibre'
-  depends=(sonic-workspace sonic-win)
-  provides=(plasma-x11-session sonic-x11-session)
-  conflicts=(plasma-x11-session sonic-x11-session)
-  replaces=(sonic-x11-session)
+  depends=(sonic-workspace)
+  provides=(plasma-x11-session)
+  conflicts=(plasma-x11-session)
   groups=(sonicde)
 
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions

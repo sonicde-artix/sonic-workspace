@@ -1,10 +1,10 @@
 ---
-version: 6.5.4-3
+version: 6.5.4-4
 pkgbase:
   name: sonic-workspace
   pkgdesc: Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions
   pkgver: 6.5.4
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/Sonic-DE/sonic-workspace
   arch:
     - x86_64
@@ -248,26 +248,17 @@ pkgname:
       - 'xdg-desktop-portal-gtk: sync font settings to Flatpak apps'
     provides:
       - plasma-workspace
-      - plasma-workspace-sonic
     conflicts:
       - plasma-workspace
       - plasma-wayland-session
-      - plasma-workspace-sonic
-    replaces:
-      - plasma-workspace-sonic
   - name: sonic-x11-session
     pkgdesc: Plasma X11 session, sonic edition, for XLibre
     groups:
       - sonicde
     depends:
       - sonic-workspace
-      - sonic-win
     provides:
       - plasma-x11-session
-      - sonic-x11-session
     conflicts:
       - plasma-x11-session
-      - sonic-x11-session
-    replaces:
-      - sonic-x11-session
 # generated with artixpkg 0.37.4-1-any
