@@ -1,10 +1,10 @@
 ---
-version: 6.5.4-4
+version: 6.5.4-5
 pkgbase:
   name: sonic-workspace
   pkgdesc: Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions
   pkgver: 6.5.4
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/Sonic-DE/sonic-workspace
   arch:
     - x86_64
@@ -234,7 +234,7 @@ pkgname:
       - xorg-xrdb
       - xorg-xwayland
       - zlib
-      - plasma-x11-session
+      - sonic-x11-session
       - plasma-integration
     optdepends:
       - 'appmenu-gtk-module: global menu support for some GTK3 applications'

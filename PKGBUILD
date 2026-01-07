@@ -4,7 +4,7 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.5.4
 _pkgver="${pkgver}"
-pkgrel=4
+pkgrel=5
 pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -143,7 +143,7 @@ package_sonic-workspace() {
             'plasma-workspace-wallpapers: additional wallpapers'
             'plasma5-integration: use Plasma settings in Qt5 applications'
             'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
-  depends+=(plasma-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
+  depends+=(sonic-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
   conflicts=(plasma-workspace plasma-wayland-session)
   provides=(plasma-workspace)
   groups=(sonicde)
