@@ -2,9 +2,9 @@
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.5.4
-_pkgver="${pkgver}"
-pkgrel=5
+pkgver=6.5.5
+_pkgver="v${pkgver}"
+pkgrel=1
 pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -30,6 +30,7 @@ depends=(accountsservice
          kcrash
          kde-cli-tools
          kdeclarative
+         kdecorations
          kded
          kdbusaddons
          kglobalaccel
@@ -110,6 +111,7 @@ depends=(accountsservice
          zlib)
 makedepends=(baloo
              extra-cmake-modules
+             git
              kdoctools
              libelogind
              networkmanager-qt
@@ -117,15 +119,17 @@ makedepends=(baloo
              plasma-wayland-protocols
              qcoro)
 groups=(sonicde)
-source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('e0f16d7bda45c6bf829c5fc42812a25fc5cda7bd1193883351fecd37c42e8c30')
+#source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
+source=("git+${url}.git#tag=$_pkgver")
+sha256sums=('6b3684159f4dd3176aea07242d0d25d31e66ad21a87a2da0f85c4b37330b94d6')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  #cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DGLIBC_LOCALE_GEN=OFF \
     -DBUILD_TESTING=OFF

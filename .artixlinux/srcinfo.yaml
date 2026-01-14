@@ -1,10 +1,10 @@
 ---
-version: 6.5.4-5
+version: 6.5.5-1
 pkgbase:
   name: sonic-workspace
   pkgdesc: Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions
-  pkgver: 6.5.4
-  pkgrel: 5
+  pkgver: 6.5.5
+  pkgrel: 1
   url: https://github.com/Sonic-DE/sonic-workspace
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
   makedepends:
     - baloo
     - extra-cmake-modules
+    - git
     - kdoctools
     - libelogind
     - networkmanager-qt
@@ -43,6 +44,7 @@ pkgbase:
     - kcrash
     - kde-cli-tools
     - kdeclarative
+    - kdecorations
     - kded
     - kdbusaddons
     - kglobalaccel
@@ -122,14 +124,14 @@ pkgbase:
     - xorg-xwayland
     - zlib
   source:
-    - sonic-workspace-6.5.4.tar.gz::https://github.com/Sonic-DE/sonic-workspace/archive/refs/tags/6.5.4.tar.gz
+    - git+https://github.com/Sonic-DE/sonic-workspace.git#tag=v6.5.5
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - e0f16d7bda45c6bf829c5fc42812a25fc5cda7bd1193883351fecd37c42e8c30
+    - 6b3684159f4dd3176aea07242d0d25d31e66ad21a87a2da0f85c4b37330b94d6
 pkgname:
   - name: sonic-workspace
     groups:
@@ -156,6 +158,7 @@ pkgname:
       - kcrash
       - kde-cli-tools
       - kdeclarative
+      - kdecorations
       - kded
       - kdbusaddons
       - kglobalaccel
