@@ -30,7 +30,6 @@ depends=(accountsservice
          kcrash
          kde-cli-tools
          kdeclarative
-         kdecorations
          kded
          kdbusaddons
          kglobalaccel
