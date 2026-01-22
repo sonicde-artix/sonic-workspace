@@ -2,8 +2,8 @@
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.5.5
-_pkgver="v${pkgver}"
+pkgver=6.5.5.1
+_pkgver="${pkgver}"
 pkgrel=1
 pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
@@ -120,7 +120,7 @@ makedepends=(baloo
 groups=(sonicde)
 #source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
 source=("git+${url}.git#tag=$_pkgver")
-sha256sums=('6b3684159f4dd3176aea07242d0d25d31e66ad21a87a2da0f85c4b37330b94d6')
+sha256sums=('79bcc4f78c9ff013138516832be4e257ee5c98a9addbc0874338f05acc954346')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>

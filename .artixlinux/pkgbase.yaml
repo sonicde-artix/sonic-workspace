@@ -2,11 +2,11 @@
 team: galaxy
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -54,8 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 6.5.5-1
+    version: 6.5.5.1-1
     packages:
-      - sonic-workspace-6.5.5-1-x86_64.pkg.tar.zst
-      - sonic-x11-session-6.5.5-1-x86_64.pkg.tar.zst
+      - sonic-workspace-6.5.5.1-1-x86_64.pkg.tar.zst
+      - sonic-x11-session-6.5.5.1-1-x86_64.pkg.tar.zst
     debug: []
