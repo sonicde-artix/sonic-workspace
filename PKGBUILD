@@ -2,7 +2,7 @@
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.5.5.1
+pkgver=6.6.0
 _pkgver="${pkgver}"
 pkgrel=1
 pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
@@ -118,17 +118,16 @@ makedepends=(baloo
              plasma-wayland-protocols
              qcoro)
 groups=(sonicde)
-#source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-source=("git+${url}.git#tag=$_pkgver")
-sha256sums=('79bcc4f78c9ff013138516832be4e257ee5c98a9addbc0874338f05acc954346')
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
+#source=("git+${url}.git#tag=$_pkgver")
+sha256sums=('66ec39a68c8fb912e4d6779427c81209ac8671eab6347664b8a36d14877f73bc')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  #cmake -B build -S $pkgname-$pkgver \
-  cmake -B build -S $pkgname \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DGLIBC_LOCALE_GEN=OFF \
     -DBUILD_TESTING=OFF
