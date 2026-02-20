@@ -123,7 +123,7 @@ pkgbase:
     - xorg-xwayland
     - zlib
   source:
-    - sonic-workspace-6.6.0.tar.gz::https://github.com/Sonic-DE/sonic-workspace/archive/refs/tags/6.6.0.tar.gz
+    - git+https://github.com/Sonic-DE/sonic-workspace.git#tag=6.6.0
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D

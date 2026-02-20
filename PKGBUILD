@@ -119,8 +119,8 @@ makedepends=(baloo
              plasma-wayland-protocols
              qcoro)
 groups=(sonicde)
-source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
-#source=("git+${url}.git#tag=$_pkgver")
+#source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
+source=("git+${url}.git#tag=$_pkgver")
 sha256sums=('2dc14155079fbd705aa153766d6f622d6a7f666a5c64cd38bc52001d518386b8')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
