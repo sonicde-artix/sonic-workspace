@@ -121,7 +121,7 @@ makedepends=(baloo
 groups=(sonicde)
 #source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
 source=("git+${url}.git#tag=$_pkgver")
-sha256sums=('2dc14155079fbd705aa153766d6f622d6a7f666a5c64cd38bc52001d518386b8')
+sha256sums=('64fcb9419a7c2574a5173e9ebaabec87ff978a50e8056035dce0aa86be584187')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
