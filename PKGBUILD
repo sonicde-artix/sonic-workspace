@@ -158,7 +158,6 @@ package_sonic-workspace() {
   rm -r $pkgdir/usr/lib/systemd
 }
 
-
 package_sonic-x11-session() {
   pkgdesc='Plasma X11 session, sonic edition, for XLibre'
   depends=(sonic-workspace)
