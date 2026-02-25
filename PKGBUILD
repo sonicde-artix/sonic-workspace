@@ -2,7 +2,7 @@
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.6.0
+pkgver=6.6.1
 _pkgver="${pkgver}"
 #_pkgver="v${pkgver}"
 pkgrel=2
@@ -66,7 +66,6 @@ depends=(accountsservice
          kwallet
          kwayland
          kwidgetsaddons
-         kwin
          kwindowsystem
          kxmlgui
          layer-shell-qt
@@ -101,6 +100,7 @@ depends=(accountsservice
          qt6-virtualkeyboard
          sh
          solid
+         sonic-win
          wayland
          xcb-util
          xcb-util-cursor
@@ -119,9 +119,9 @@ makedepends=(baloo
              plasma-wayland-protocols
              qcoro)
 groups=(sonicde)
-#source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
-source=("git+${url}.git#tag=$_pkgver")
-sha256sums=('64fcb9419a7c2574a5173e9ebaabec87ff978a50e8056035dce0aa86be584187')
+source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
+#source=("git+${url}.git#tag=$_pkgver")
+sha256sums=('8fbf9353d73358a94cbb47d52f653330e19a65292cfbfbd337e20f5ee5352b94')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
