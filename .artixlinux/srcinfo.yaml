@@ -1,10 +1,10 @@
 ---
-version: 6.6.1-2
+version: 6.6.2-1
 pkgbase:
   name: sonic-workspace
   pkgdesc: Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions
-  pkgver: 6.6.1
-  pkgrel: 2
+  pkgver: 6.6.2
+  pkgrel: 1
   url: https://github.com/Sonic-DE/sonic-workspace
   arch:
     - x86_64
@@ -123,14 +123,14 @@ pkgbase:
     - xorg-xwayland
     - zlib
   source:
-    - sonic-workspace-6.6.1.tar.gz::https://github.com/Sonic-DE/sonic-workspace/archive/refs/tags/6.6.1.tar.gz
+    - sonic-workspace-6.6.2.tar.gz::https://github.com/Sonic-DE/sonic-workspace/archive/refs/tags/6.6.2.tar.gz
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 8fbf9353d73358a94cbb47d52f653330e19a65292cfbfbd337e20f5ee5352b94
+    - 753df8f94511fb783f3fe88750cd302ad2beb6e88041716e7d8f6866f773840a
 pkgname:
   - name: sonic-workspace
     groups:
@@ -262,4 +262,4 @@ pkgname:
       - plasma-x11-session
     conflicts:
       - plasma-x11-session
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
