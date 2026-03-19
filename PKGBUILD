@@ -1,10 +1,9 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: artist for Sonic-DE
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.6.2
+pkgver=6.6.3
 _pkgver="${pkgver}"
-#_pkgver="v${pkgver}"
 pkgrel=1
 pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
@@ -121,14 +120,10 @@ makedepends=(baloo
 groups=(sonicde)
 source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
 #source=("git+${url}.git#tag=$_pkgver")
-sha256sums=('753df8f94511fb783f3fe88750cd302ad2beb6e88041716e7d8f6866f773840a')
-validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
-              '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
-              'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
-              '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
+sha256sums=('15fbcbcf649020be073d9a9ab77d459d8fea720ffe11aeeb7a7fe34188d60615')
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname-$_pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DGLIBC_LOCALE_GEN=OFF \
     -DBUILD_TESTING=OFF
