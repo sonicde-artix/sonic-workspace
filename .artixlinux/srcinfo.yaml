@@ -89,7 +89,6 @@ pkgbase:
     - libxfixes
     - libxft
     - libxtst
-    - milou
     - ocean-sound-theme
     - plasma-activities
     - plasma-activities-stats
@@ -192,7 +191,6 @@ pkgname:
       - libxfixes
       - libxft
       - libxtst
-      - milou
       - ocean-sound-theme
       - plasma-activities
       - plasma-activities-stats

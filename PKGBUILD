@@ -77,7 +77,7 @@ depends=(accountsservice
          libxfixes
          libxft
          libxtst
-         milou
+         #milou
          ocean-sound-theme
          plasma-activities
          plasma-activities-stats
