@@ -1,10 +1,10 @@
 ---
-version: 6.6.3-1
+version: 6.6.3-2
 pkgbase:
   name: sonic-workspace
   pkgdesc: Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions
   pkgver: 6.6.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Sonic-DE/sonic-workspace
   arch:
     - x86_64
@@ -17,10 +17,9 @@ pkgbase:
     - extra-cmake-modules
     - git
     - kdoctools
-    - libelogind
+    - dbus
     - networkmanager-qt
     - phonon-qt6
-    - plasma-wayland-protocols
     - qcoro
   depends:
     - accountsservice
@@ -46,7 +45,7 @@ pkgbase:
     - kdeclarative
     - kded
     - kdbusaddons
-    - kglobalaccel
+    - sonic-frameworks-keybind
     - kguiaddons
     - kholidays
     - ki18n
@@ -68,7 +67,7 @@ pkgbase:
     - kpipewire
     - krunner
     - kquickcharts
-    - kscreenlocker
+    - sonic-screenlocker
     - kservice
     - kstatusnotifieritem
     - ksvg
@@ -77,15 +76,13 @@ pkgbase:
     - ktextwidgets
     - kuserfeedback
     - kwallet
-    - kwayland
     - kwidgetsaddons
     - kwindowsystem
     - kxmlgui
-    - layer-shell-qt
     - libcanberra
     - libice
     - libkexiv2
-    - libksysguard
+    - sonic-sysguard-library
     - libplasma
     - libqalculate
     - libsm
@@ -114,13 +111,11 @@ pkgbase:
     - sh
     - solid
     - sonic-win
-    - wayland
     - xcb-util
     - xcb-util-cursor
     - xcb-util-image
     - xorg-xmessage
     - xorg-xrdb
-    - xorg-xwayland
     - zlib
   source:
     - sonic-workspace-6.6.3.tar.gz::https://github.com/Sonic-DE/sonic-workspace/archive/refs/tags/6.6.3.tar.gz
@@ -154,7 +149,7 @@ pkgname:
       - kdeclarative
       - kded
       - kdbusaddons
-      - kglobalaccel
+      - sonic-frameworks-keybind
       - kguiaddons
       - kholidays
       - ki18n
@@ -176,7 +171,7 @@ pkgname:
       - kpipewire
       - krunner
       - kquickcharts
-      - kscreenlocker
+      - sonic-screenlocker
       - kservice
       - kstatusnotifieritem
       - ksvg
@@ -185,15 +180,13 @@ pkgname:
       - ktextwidgets
       - kuserfeedback
       - kwallet
-      - kwayland
       - kwidgetsaddons
       - kwindowsystem
       - kxmlgui
-      - layer-shell-qt
       - libcanberra
       - libice
       - libkexiv2
-      - libksysguard
+      - sonic-sysguard-library
       - libplasma
       - libqalculate
       - libsm
@@ -222,13 +215,11 @@ pkgname:
       - sh
       - solid
       - sonic-win
-      - wayland
       - xcb-util
       - xcb-util-cursor
       - xcb-util-image
       - xorg-xmessage
       - xorg-xrdb
-      - xorg-xwayland
       - zlib
       - sonic-x11-session
       - plasma-integration
@@ -237,9 +228,8 @@ pkgname:
       - 'baloo: Baloo search runner'
       - 'discover: manage applications installation from the launcher'
       - 'kdepim-addons: displaying PIM events in the calendar'
-      - 'kwayland-integration: Wayland integration for Qt5 applications'
       - 'networkmanager-qt: IP based geolocation'
-      - 'plasma-workspace-wallpapers: additional wallpapers'
+      - 'sonic-workspace-wallpapers: additional wallpapers'
       - 'plasma5-integration: use Plasma settings in Qt5 applications'
       - 'xdg-desktop-portal-gtk: sync font settings to Flatpak apps'
     provides:

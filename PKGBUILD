@@ -4,7 +4,7 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.3
 _pkgver="${pkgver}"
-pkgrel=1
+pkgrel=2
 pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -32,7 +32,7 @@ depends=(accountsservice
          kdeclarative
          kded
          kdbusaddons
-         kglobalaccel
+         sonic-frameworks-keybind
          kguiaddons
          kholidays
          ki18n
@@ -54,7 +54,7 @@ depends=(accountsservice
          kpipewire
          krunner
          kquickcharts
-         kscreenlocker
+         sonic-screenlocker
          kservice
          kstatusnotifieritem
          ksvg
@@ -63,15 +63,13 @@ depends=(accountsservice
          ktextwidgets
          kuserfeedback
          kwallet
-         kwayland
          kwidgetsaddons
          kwindowsystem
          kxmlgui
-         layer-shell-qt
          libcanberra
          libice
          libkexiv2
-         libksysguard
+         sonic-sysguard-library
          libplasma
          libqalculate
          libsm
@@ -100,22 +98,19 @@ depends=(accountsservice
          sh
          solid
          sonic-win
-         wayland
          xcb-util
          xcb-util-cursor
          xcb-util-image
          xorg-xmessage
          xorg-xrdb
-         xorg-xwayland
          zlib)
 makedepends=(baloo
              extra-cmake-modules
              git
              kdoctools
-             libelogind
+             dbus
              networkmanager-qt
              phonon-qt6
-             plasma-wayland-protocols
              qcoro)
 groups=(sonicde)
 source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
@@ -135,10 +130,8 @@ package_sonic-workspace() {
             'baloo: Baloo search runner'
             'discover: manage applications installation from the launcher'
             'kdepim-addons: displaying PIM events in the calendar'
-            'kwayland-integration: Wayland integration for Qt5 applications'
-            # 'kwin-x11: X session window manager'
             'networkmanager-qt: IP based geolocation'
-            'plasma-workspace-wallpapers: additional wallpapers'
+            'sonic-workspace-wallpapers: additional wallpapers'
             'plasma5-integration: use Plasma settings in Qt5 applications'
             'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
   depends+=(sonic-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
