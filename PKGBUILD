@@ -4,7 +4,7 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.3
 _pkgver="${pkgver}"
-pkgrel=5
+pkgrel=6
 pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -77,7 +77,7 @@ depends=(accountsservice
          libxfixes
          libxft
          libxtst
-         #milou
+         milou
          ocean-sound-theme
          plasma-activities
          plasma-activities-stats
@@ -94,7 +94,7 @@ depends=(accountsservice
          sh
          solid
          sonic-frameworks-keybind
-         sonic-interface-libraries
+         #sonic-interface-libraries
          sonic-screenlocker
          sonic-sysguard-library
          sonic-win
