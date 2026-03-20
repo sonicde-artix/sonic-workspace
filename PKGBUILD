@@ -4,8 +4,8 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.3
 _pkgver="${pkgver}"
-pkgrel=2
-pkgdesc='Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions'
+pkgrel=3
+pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
 license=(LGPL-2.0-or-later)
@@ -54,7 +54,6 @@ depends=(accountsservice
          kpipewire
          krunner
          kquickcharts
-         sonic-screenlocker
          kservice
          kstatusnotifieritem
          ksvg
@@ -69,8 +68,6 @@ depends=(accountsservice
          libcanberra
          libice
          libkexiv2
-         sonic-sysguard-library
-         libplasma
          libqalculate
          libsm
          libx11
@@ -97,6 +94,9 @@ depends=(accountsservice
          qt6-virtualkeyboard
          sh
          solid
+         sonic-interface-libraries
+         sonic-screenlocker
+         sonic-sysguard-library
          sonic-win
          xcb-util
          xcb-util-cursor

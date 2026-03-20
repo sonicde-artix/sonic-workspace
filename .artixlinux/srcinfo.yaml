@@ -1,10 +1,10 @@
 ---
-version: 6.6.3-2
+version: 6.6.3-3
 pkgbase:
   name: sonic-workspace
-  pkgdesc: Various components needed to run a Plasma-based environment. Including fixes and improvements for X11 sessions
+  pkgdesc: Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions
   pkgver: 6.6.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/Sonic-DE/sonic-workspace
   arch:
     - x86_64
@@ -67,7 +67,6 @@ pkgbase:
     - kpipewire
     - krunner
     - kquickcharts
-    - sonic-screenlocker
     - kservice
     - kstatusnotifieritem
     - ksvg
@@ -82,8 +81,6 @@ pkgbase:
     - libcanberra
     - libice
     - libkexiv2
-    - sonic-sysguard-library
-    - libplasma
     - libqalculate
     - libsm
     - libx11
@@ -110,6 +107,9 @@ pkgbase:
     - qt6-virtualkeyboard
     - sh
     - solid
+    - sonic-interface-libraries
+    - sonic-screenlocker
+    - sonic-sysguard-library
     - sonic-win
     - xcb-util
     - xcb-util-cursor
@@ -171,7 +171,6 @@ pkgname:
       - kpipewire
       - krunner
       - kquickcharts
-      - sonic-screenlocker
       - kservice
       - kstatusnotifieritem
       - ksvg
@@ -186,8 +185,6 @@ pkgname:
       - libcanberra
       - libice
       - libkexiv2
-      - sonic-sysguard-library
-      - libplasma
       - libqalculate
       - libsm
       - libx11
@@ -214,6 +211,9 @@ pkgname:
       - qt6-virtualkeyboard
       - sh
       - solid
+      - sonic-interface-libraries
+      - sonic-screenlocker
+      - sonic-sysguard-library
       - sonic-win
       - xcb-util
       - xcb-util-cursor
