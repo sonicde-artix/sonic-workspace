@@ -4,7 +4,7 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.3
 _pkgver="${pkgver}"
-pkgrel=3
+pkgrel=4
 pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -32,7 +32,6 @@ depends=(accountsservice
          kdeclarative
          kded
          kdbusaddons
-         sonic-frameworks-keybind
          kguiaddons
          kholidays
          ki18n
@@ -63,7 +62,7 @@ depends=(accountsservice
          kuserfeedback
          kwallet
          kwidgetsaddons
-         kwindowsystem
+         #kwindowsystem
          kxmlgui
          libcanberra
          libice
@@ -94,6 +93,7 @@ depends=(accountsservice
          qt6-virtualkeyboard
          sh
          solid
+         sonic-frameworks-keybind
          sonic-interface-libraries
          sonic-screenlocker
          sonic-sysguard-library

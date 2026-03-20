@@ -1,10 +1,10 @@
 ---
-version: 6.6.3-3
+version: 6.6.3-4
 pkgbase:
   name: sonic-workspace
   pkgdesc: Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions
   pkgver: 6.6.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/Sonic-DE/sonic-workspace
   arch:
     - x86_64
@@ -45,7 +45,6 @@ pkgbase:
     - kdeclarative
     - kded
     - kdbusaddons
-    - sonic-frameworks-keybind
     - kguiaddons
     - kholidays
     - ki18n
@@ -76,7 +75,6 @@ pkgbase:
     - kuserfeedback
     - kwallet
     - kwidgetsaddons
-    - kwindowsystem
     - kxmlgui
     - libcanberra
     - libice
@@ -107,6 +105,7 @@ pkgbase:
     - qt6-virtualkeyboard
     - sh
     - solid
+    - sonic-frameworks-keybind
     - sonic-interface-libraries
     - sonic-screenlocker
     - sonic-sysguard-library
@@ -149,7 +148,6 @@ pkgname:
       - kdeclarative
       - kded
       - kdbusaddons
-      - sonic-frameworks-keybind
       - kguiaddons
       - kholidays
       - ki18n
@@ -180,7 +178,6 @@ pkgname:
       - kuserfeedback
       - kwallet
       - kwidgetsaddons
-      - kwindowsystem
       - kxmlgui
       - libcanberra
       - libice
@@ -211,6 +208,7 @@ pkgname:
       - qt6-virtualkeyboard
       - sh
       - solid
+      - sonic-frameworks-keybind
       - sonic-interface-libraries
       - sonic-screenlocker
       - sonic-sysguard-library
