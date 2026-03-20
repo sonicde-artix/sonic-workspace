@@ -80,6 +80,7 @@ pkgbase:
     - libcanberra
     - libice
     - libkexiv2
+    - libplasma
     - libqalculate
     - libsm
     - libx11
@@ -183,6 +184,7 @@ pkgname:
       - libcanberra
       - libice
       - libkexiv2
+      - libplasma
       - libqalculate
       - libsm
       - libx11

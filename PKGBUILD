@@ -67,6 +67,7 @@ depends=(accountsservice
          libcanberra
          libice
          libkexiv2
+         libplasma
          libqalculate
          libsm
          libx11
