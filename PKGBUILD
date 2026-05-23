@@ -1,57 +1,49 @@
-# Maintainer: artist for Sonic-DE
+# Maintainer: artist for Artix Linux
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.6.3
+pkgver=6.6.5
 _pkgver="${pkgver}"
-pkgrel=6
+pkgrel=3
+_commit="d954caf2643c77c19a963d170714c31bab49ab2e"
 pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
 license=(LGPL-2.0-or-later)
 depends=(accountsservice
          appstream-qt
-         dbus
+         elogind
          fontconfig
          freetype2
-         gcc-libs
          glibc
          icu
          kactivitymanagerd
          karchive
-         kauth
          kbookmarks
          kcmutils
          kcolorscheme
          kcompletion
          kconfig
          kconfigwidgets
-         kcoreaddons
          kcrash
          kde-cli-tools
          kdeclarative
          kded
          kdbusaddons
-         kguiaddons
          kholidays
          ki18n
          kiconthemes
          kidletime
-         kio
          kio-extras
          kio-fuse
-         kirigami
-         kirigami-addons
          kitemmodels
          kjobwidgets
          knewstuff
-         knighttime
          knotifications
          knotifyconfig
          kpackage
          kparts
          kpipewire
-         krunner
          kquickcharts
          kservice
          kstatusnotifieritem
@@ -62,12 +54,11 @@ depends=(accountsservice
          kuserfeedback
          kwallet
          kwidgetsaddons
-         kwindowsystem
          kxmlgui
          libcanberra
+         libgcc
          libice
          libkexiv2
-         libplasma
          libqalculate
          libsm
          libx11
@@ -80,7 +71,6 @@ depends=(accountsservice
          libxtst
          milou
          ocean-sound-theme
-         plasma-activities
          plasma-activities-stats
          plasma5support
          prison
@@ -94,8 +84,17 @@ depends=(accountsservice
          qt6-virtualkeyboard
          sh
          solid
+         sonic-activities
+         sonic-frameworks-auth
+         sonic-frameworks-core-addons
+         sonic-frameworks-gui-addons
+         sonic-frameworks-io
          sonic-frameworks-keybind
-         #sonic-interface-libraries
+         sonic-frameworks-quick-ui
+         sonic-frameworks-runner
+         sonic-frameworks-windowsystem
+         sonic-interface-libraries
+         sonic-night-light 
          sonic-screenlocker
          sonic-sysguard-library
          sonic-win
@@ -109,14 +108,15 @@ makedepends=(baloo
              extra-cmake-modules
              git
              kdoctools
-             dbus
+             libelogind
              networkmanager-qt
              phonon-qt6
              qcoro)
 groups=(sonicde)
-source=("$pkgname-${_pkgver}.tar.gz::${url}/archive/refs/tags/${_pkgver}.tar.gz")
-#source=("git+${url}.git#tag=$_pkgver")
-sha256sums=('15fbcbcf649020be073d9a9ab77d459d8fea720ffe11aeeb7a7fe34188d60615')
+makedepends+=(git)
+source=("$pkgname-$pkgver::git+$url.git#commit=$_commit")
+
+sha256sums=('a8b5b8a7b5ad30f15274db1136e3b16fa0d2d8d520012d773260b75fe5eabfb3')
 
 build() {
   cmake -B build -S $pkgname-$_pkgver \
@@ -138,7 +138,9 @@ package_sonic-workspace() {
   depends+=(sonic-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
   conflicts=(plasma-workspace plasma-wayland-session)
   provides=(plasma-workspace)
+  replaces=(plasma-workspace)
   groups=(sonicde)
+  install=$pkgname.install
 
   DESTDIR="$pkgdir" cmake --install build
 
@@ -152,8 +154,10 @@ package_sonic-x11-session() {
   depends=(sonic-workspace)
   provides=(plasma-x11-session)
   conflicts=(plasma-x11-session)
+  replaces=(plasma-x11-session)
   groups=(sonicde)
 
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
+  sed -i 's|Plasma (X11)|SonicDE|' "$pkgdir"/usr/share/xsessions/plasmax11.desktop
 }
 
