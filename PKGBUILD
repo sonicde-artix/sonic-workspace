@@ -1,11 +1,11 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: callmetango
+# Contributor: artist <artist@artixlinux.org>
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.5
 _pkgver="${pkgver}"
 pkgrel=3
-_commit="d954caf2643c77c19a963d170714c31bab49ab2e"
 pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -94,7 +94,7 @@ depends=(accountsservice
          sonic-frameworks-runner
          sonic-frameworks-windowsystem
          sonic-interface-libraries
-         sonic-night-light 
+         sonic-night-light
          sonic-screenlocker
          sonic-sysguard-library
          sonic-win
@@ -113,9 +113,7 @@ makedepends=(baloo
              phonon-qt6
              qcoro)
 groups=(sonicde)
-makedepends+=(git)
-source=("$pkgname-$pkgver::git+$url.git#commit=$_commit")
-
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
 sha256sums=('a8b5b8a7b5ad30f15274db1136e3b16fa0d2d8d520012d773260b75fe5eabfb3')
 
 build() {
@@ -160,4 +158,3 @@ package_sonic-x11-session() {
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
   sed -i 's|Plasma (X11)|SonicDE|' "$pkgdir"/usr/share/xsessions/plasmax11.desktop
 }
-
