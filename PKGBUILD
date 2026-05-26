@@ -5,7 +5,7 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.5
 _pkgver="${pkgver}"
-pkgrel=4
+pkgrel=5
 pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -114,7 +114,7 @@ makedepends=(baloo
              qcoro)
 groups=(sonicde)
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('a8b5b8a7b5ad30f15274db1136e3b16fa0d2d8d520012d773260b75fe5eabfb3')
+sha256sums=('d67c6585d2c4ed5e4ebb8b8956955997532c5577c4c859e011f09daab2417093')
 
 build() {
   cmake -B build -S $pkgname-$_pkgver \
