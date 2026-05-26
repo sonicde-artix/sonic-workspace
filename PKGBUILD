@@ -138,7 +138,6 @@ package_sonic-workspace() {
   provides=(plasma-workspace)
   replaces=(plasma-workspace)
   groups=(sonicde)
-  install=$pkgname.install
 
   DESTDIR="$pkgdir" cmake --install build
 
