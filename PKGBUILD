@@ -3,9 +3,9 @@
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.6.5
+pkgver=6.6.5.1
 _pkgver="${pkgver}"
-pkgrel=5
+pkgrel=1
 pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -34,7 +34,6 @@ depends=(accountsservice
          ki18n
          kiconthemes
          kidletime
-         kio-extras
          kio-fuse
          kitemmodels
          kjobwidgets
@@ -89,6 +88,7 @@ depends=(accountsservice
          sonic-frameworks-core-addons
          sonic-frameworks-gui-addons
          sonic-frameworks-io
+         sonic-frameworks-io-extras
          sonic-frameworks-keybind
          sonic-frameworks-quick-ui
          sonic-frameworks-runner
@@ -105,16 +105,16 @@ depends=(accountsservice
          xorg-xrdb
          zlib)
 makedepends=(baloo
-             extra-cmake-modules
              git
-             kdoctools
              libelogind
              networkmanager-qt
              phonon-qt6
-             qcoro)
+             qcoro
+             sonic-frameworks-cmake-modules
+             sonic-frameworks-doctools)
 groups=(sonicde)
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('d67c6585d2c4ed5e4ebb8b8956955997532c5577c4c859e011f09daab2417093')
+sha256sums=('84182ea3367b1645cf2b772df44a5f0155776bd951856eb218a09980db343e55')
 
 build() {
   cmake -B build -S $pkgname-$_pkgver \
