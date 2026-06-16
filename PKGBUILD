@@ -5,7 +5,7 @@ pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.5.1
 _pkgver="${pkgver}"
-pkgrel=1
+pkgrel=2
 pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -118,6 +118,7 @@ sha256sums=('84182ea3367b1645cf2b772df44a5f0155776bd951856eb218a09980db343e55')
 
 build() {
   cmake -B build -S $pkgname-$_pkgver \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DGLIBC_LOCALE_GEN=OFF \
     -DBUILD_TESTING=OFF
