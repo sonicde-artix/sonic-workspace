@@ -1,12 +1,15 @@
 # Maintainer: callmetango
 # Contributor: artist <artist@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Alexey D. <lq07829icatm at rambler.ru>
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
 pkgver=6.6.5.1
-_pkgver="${pkgver}"
 pkgrel=2
-pkgdesc='Various components needed to run a Sonic-DE-based environment. Including fixes and improvements for X11 sessions'
+pkgdesc='SonicDE workspace components'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
 license=(LGPL-2.0-or-later)
@@ -15,6 +18,7 @@ depends=(accountsservice
          elogind
          fontconfig
          freetype2
+         gcc-libs
          glibc
          icu
          kactivitymanagerd
@@ -26,20 +30,20 @@ depends=(accountsservice
          kconfig
          kconfigwidgets
          kcrash
+         kdbusaddons
          kde-cli-tools
          kdeclarative
          kded
-         kdbusaddons
          kholidays
          ki18n
          kiconthemes
          kidletime
          kio-fuse
+         kirigami-addons
          kitemmodels
          kjobwidgets
          knewstuff
          knotifications
-         knotifyconfig
          kpackage
          kparts
          kpipewire
@@ -55,7 +59,6 @@ depends=(accountsservice
          kwidgetsaddons
          kxmlgui
          libcanberra
-         libgcc
          libice
          libkexiv2
          libqalculate
@@ -105,7 +108,6 @@ depends=(accountsservice
          xorg-xrdb
          zlib)
 makedepends=(baloo
-             git
              libelogind
              networkmanager-qt
              phonon-qt6
@@ -117,7 +119,7 @@ source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
 sha256sums=('84182ea3367b1645cf2b772df44a5f0155776bd951856eb218a09980db343e55')
 
 build() {
-  cmake -B build -S $pkgname-$_pkgver \
+  cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DGLIBC_LOCALE_GEN=OFF \
@@ -131,13 +133,12 @@ package_sonic-workspace() {
             'discover: manage applications installation from the launcher'
             'kdepim-addons: displaying PIM events in the calendar'
             'networkmanager-qt: IP based geolocation'
-            'sonic-workspace-wallpapers: additional wallpapers'
+            'plasma-workspace-wallpapers: additional wallpapers'
             'plasma5-integration: use Plasma settings in Qt5 applications'
             'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
   depends+=(sonic-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
-  conflicts=(plasma-workspace plasma-wayland-session)
   provides=(plasma-workspace)
-  replaces=(plasma-workspace)
+  conflicts=(plasma-workspace plasma-wayland-session)
   groups=(sonicde)
 
   DESTDIR="$pkgdir" cmake --install build
@@ -148,11 +149,10 @@ package_sonic-workspace() {
 }
 
 package_sonic-x11-session() {
-  pkgdesc='Plasma X11 session, sonic edition, for XLibre'
+  pkgdesc='SonicDE X11 session'
   depends=(sonic-workspace)
   provides=(plasma-x11-session)
   conflicts=(plasma-x11-session)
-  replaces=(plasma-x11-session)
   groups=(sonicde)
 
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
