@@ -7,8 +7,8 @@
 
 pkgbase=sonic-workspace
 pkgname=(sonic-workspace sonic-x11-session)
-pkgver=6.6.5.1
-pkgrel=2
+pkgver=6.7.0
+pkgrel=1
 pkgdesc='SonicDE workspace components'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-workspace'
@@ -116,7 +116,7 @@ makedepends=(baloo
              sonic-frameworks-doctools)
 groups=(sonicde)
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('84182ea3367b1645cf2b772df44a5f0155776bd951856eb218a09980db343e55')
+sha256sums=('de538a2f4f216de412f1afd77d585ec220148c46be64c7a55897f5c784bbfd8c')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
